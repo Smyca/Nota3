@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../static/signup.css">
+</head>
+
+<body class="bg-general">
+
+    <div class="center-div">
+        <div class="container p-5 degrade-fondo">
+            <div class="row align-items-center">
+                <!-- Div img grande -->
+                <div class="col-1 col-sm-1 col-md-1 col-lg-6">
+                    <a class="navbar-brand" href="{% url 'inicio' %}">
+                        <img src="../static/imagenes/logo_yummi.png" alt="Logo" class="d-block mx-auto logo-principal">
+                    </a>
+                </div>
+
+                <!-- Div form -->
+                <div class="col-10 col-sm-10 col-md-10 col-lg-6 bg-login mx-auto">
+
+                    <form id="formulario" action="" method="post">
+                        {% csrf_token %}
+                        <div class="col-md-12">
+                            <label for="inputNombre" class="form-label">Nombre</label>
+                            <input name='nombre' type="text" class="form-control degrade-inputs" id="inputNombre">
+                        </div>
+
+                        <div id="errorName" class="text-danger"></div>
+
+                        <div class="col-md-12">
+                            <label for="inputApellido" class="form-label">Apellido</label>
+                            <input name='apellido' type="text" class="form-control degrade-inputs" id="inputApellido">
+                        </div>
+
+                        <div id="errorApellido" class="text-danger"></div>
+
+                        <div class="col-md-12">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input name='email' type="email" class="form-control degrade-inputs" id="inputEmail">
+                        </div>
+
+                        <div id="errorEmail" class="text-danger"></div>
+
+                        <div class="col-md-12">
+                            <label for="pass" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <input name='password' type="password" class="form-control degrade-inputs" id="pass">
+                                <button class="btn button" type="button" id="button-addon2">
+                                    <i class="bi bi-eye-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="errorPassword" class="text-danger"></div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-8">
+                                    <button type="submit" class="btn button mx-auto w-100 mt-5">Crear Cuenta</button>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'valid-sign.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

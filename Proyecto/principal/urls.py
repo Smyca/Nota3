@@ -20,5 +20,6 @@ from home.views import homeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Login/', include('IniciarSesion.urls')),
     path('',homeView),
 ]

@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    alert('Documento Listo')
+    // alert('Documento Listo')
 });
 
-const form = document.getElementById('formulario');
+const form = document.querySelector('form');
+
 debugger
-const nombre = document.getElementById('inputNombre');
-const apellido = document.getElementById('inputApellido');
-const email = document.getElementById('inputEmail');
-const password = document.getElementById('pass');
+const nombre    = document.getElementById('inputNombre');
+const apellido  = document.getElementById('inputApellido');
+const email     = document.getElementById('inputEmail');
+const password  = document.getElementById('pass');
 
 form.addEventListener('submit', function (evt) {
     evt.preventDefault();

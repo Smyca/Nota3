@@ -30,7 +30,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-mars"></i>
-                            Descubre
+                            Menu
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'carta' %}">Menú</a></li>
@@ -44,12 +44,8 @@
                             &nbsp;Unete a Yummi
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Como Delivery</a></li>
-                            <li><a class="dropdown-item" href="#">Como Restaurant</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Otro</a></li>
+                            <li><a class="dropdown-item" href="{% url 'carta' %}">Formulario</a></li>
+                            <
                         </ul>
                     </li>
 
@@ -59,9 +55,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Quienes Somos</a></li>
-                            <li><a class="dropdown-item" href="#">Politicas de Seguridad</a></li>
-                            <li><a class="dropdown-item" href="#">Noticias</a></li>
-                            <li><a class="dropdown-item" href="#">Terminos y Condiciones</a></li>
+                            
                         </ul>
                     </li>
                 </ul>
@@ -116,52 +110,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-12">
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kQX3BMhy/200/200/original?country=ar"
-                                        class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Hamburguesa Triple</h5>
-                                        <p class="card-text">Hamburguesa, con queso y tocino</p>
-                                        <p class="card-text"><small class="text-body-secondary">$8.990</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://unimarc.vtexassets.com/arquivos/ids/229473/000000000000616137-UN-01.jpg?v=637998050786430000"
-                                        class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Bebida</h5>
-                                        <p class="card-text">Pepsi Zero 3 lts</p>
-                                        <p class="card-text"><small class="text-body-secondary">$3.990</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="static">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Total: $12.890</h5>
-                <button type="button" class="btn button w-100" data-bs-dismiss="offcanvas">Pagar</button>
-            </div>
+            {% include "modalshop.html" %}
 
         </div>
     </div>

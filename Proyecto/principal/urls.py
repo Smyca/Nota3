@@ -24,6 +24,8 @@ urlpatterns = [
     path('',include('home.urls')),
     path('',include('IniciarSesion.urls')),
     path('',include('registro.urls')),
+    path('',include('carta.urls')),
+
     
     path('agregar/<int:producto_id>/', agregar_producto, name = 'add'),
     path('eliminar/<int:producto_id>/', eliminar_producto, name = 'del'),

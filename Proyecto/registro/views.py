@@ -26,3 +26,4 @@ def registroView(request):
     else:
         print("Estas en el ELSE")
         return render(request, 'registro.html')
+

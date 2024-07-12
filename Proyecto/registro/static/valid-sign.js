@@ -12,12 +12,13 @@ const password  = document.getElementById('pass');
 
 form.addEventListener('submit', function (evt) {
     evt.preventDefault();
-
+    
     const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (nombre.value === null || nombre.value === '') {
         alert('Ingresa tu Nombre')
     }
+    
     if (apellido.value === null || apellido.value === '') {
         alert('Ingresa tu Apellido')
     }

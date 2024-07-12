@@ -6,3 +6,6 @@ class Registro(models.Model):
     apellido    = models.CharField(max_length=100)
     email       = models.EmailField()
     password    = models.CharField(max_length=8)
+
+    def __str__(self):
+        return str(self.nombre)+' '+str(self.apellido)

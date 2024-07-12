@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from carta.views import agregar_producto, eliminar_producto, restar_producto, limpiar_carrito
 
 
 urlpatterns = [
@@ -23,5 +24,9 @@ urlpatterns = [
     path('',include('home.urls')),
     path('',include('IniciarSesion.urls')),
     path('',include('registro.urls')),
-   
+    
+    path('agregar/<int:producto_id>/', agregar_producto, name = 'add'),
+    path('eliminar/<int:producto_id>/', eliminar_producto, name = 'del'),
+    path('restar/<int:producto_id>/', restar_producto, name = 'res'),
+    path('limpiar/', limpiar_carrito, name = 'cle'),
 ]

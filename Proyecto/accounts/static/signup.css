@@ -1,0 +1,40 @@
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+.logo-principal {
+    height: auto;
+    width: auto;
+}
+
+.degrade-fondo {
+    background-color: rgb(0, 0, 0, 0.6) !important;
+    border-radius: 20px;
+    color: #C9E265;
+}
+
+.degrade-inputs {
+    background-color: rgb(0, 0, 0, 0.3) !important;
+    color: white !important;
+}
+
+.button {
+    background-color: #C9E265 !important;
+    color: black !important;
+}
+
+.bg-general {
+    background-image: url('../static/imagenes/bg-login.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}

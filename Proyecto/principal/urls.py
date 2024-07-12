@@ -25,6 +25,8 @@ urlpatterns = [
     path('',include('IniciarSesion.urls')),
     path('',include('registro.urls')),
     path('',include('carta.urls')),
+    path("accounts/", include("accounts.urls")),
+    path("login/", include("django.contrib.auth.urls")),  
 
     
     path('agregar/<int:producto_id>/', agregar_producto, name = 'add'),

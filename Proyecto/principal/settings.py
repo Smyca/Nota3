@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'IniciarSesion.apps.IniciarsesionConfig',
     'registro.apps.RegistroConfig',
     'carta',
+    'QuienesSomos',
+    'unete',
 
 ]
 

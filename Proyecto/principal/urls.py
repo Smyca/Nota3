@@ -25,6 +25,9 @@ urlpatterns = [
     path('',include('IniciarSesion.urls')),
     path('',include('registro.urls')),
     path('',include('carta.urls')),
+    path('',include('QuienesSomos.urls')),
+    path('',include('unete.urls')),
+
 
     
     path('agregar/<int:producto_id>/', agregar_producto, name = 'add'),

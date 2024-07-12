@@ -1,0 +1,93 @@
+#navstyle {
+    padding: 0;
+    background-color: white;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+}
+
+
+.button {
+    background-color: #C9E265 !important;
+}
+
+.bg-principal {
+    background-image: url('../static/imagenes/ingredientes-hamburguesas-planas-mesa-madera.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 25px;
+}
+
+.titulo-bg {
+    padding-top: 260px;
+    margin-left: 15px;
+    color: white;
+}
+
+.arreglo-input {
+    margin-bottom: 250px;
+    margin-left: 15px;
+}
+
+.tittle-cards {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text-card {
+    text-align: center;
+    color: black;
+}
+
+#cardstyle {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.shadow-sug {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 25px 25px -20px;
+}
+
+.arreglo-sugerencias {
+    padding: 50px;
+}
+
+.text-sugerencias {
+    text-align: center;
+}
+
+.bg-seccion-preferencia {
+    padding-top: 5px;
+    padding-bottom: 30px;
+}
+
+.bg-seccion-info {
+    background-color: #C9E265 !important;
+}
+
+.text-informacion {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+#footerstyle {
+    background-color: rgb(0, 0, 0, 0.4) !important;
+}
+
+.logofooter {
+    height: 180px;
+    width: 180px;
+    /* filter: grayscale(100%);*/
+}
+
+.center-cosas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

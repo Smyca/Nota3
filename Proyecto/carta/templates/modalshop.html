@@ -1,0 +1,35 @@
+{% if request.session.carrito.items %}
+{% for key, value in request.session.carrito.items %}
+<div class="col-12">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{value.imagen}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{value.nombre}}</h5>
+                    <p>${{value.acumulado}}</p>
+                    <p>{{value.cantidad}}</p>
+                    <a href="{% url 'add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+                    <a href="{% url 'res' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="alert alert-danger text-center"> Sin Productos </div>
+{% endif %}
+<div class="static">
+    <h5 class="offcanvas-title mb-3" id="offcanvasWithBothOptionsLabel">Total: ${{total_carrito}}</h5>
+    <button type="button" class="btn button w-100 mb-2" data-bs-dismiss="offcanvas">Pagar</button>
+</div>
+<div class="row text-center">
+    <div class="col-12">
+        <div class="text-center">
+            <a href="{% url 'cle' %}" class="btn button w-50 ms-4">Limpiar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+#navstyle {
+    padding: 0;
+    background-color: #48744C !important;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+}
+
+.color {
+    color: black;
+}
+
+.button1 {
+    background-color: #C9E265 !important;
+}
+
+.button {
+    background-color: #C9E265 !important;
+    border-radius: 24px !important;
+}
+
+.tittle-cards {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text-card {
+    text-align: center;
+    color: black;
+}
+
+#cardstyle {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.shadow-sug {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.5s;
+}
+
+.shadow-sug:hover {
+    transform: scale(1.05);
+}
+
+#footerstyle {
+    background-color: rgb(0, 0, 0, 0.4) !important;
+}
+
+.logofooter {
+    height: 180px;
+    width: 180px;
+    /* filter: grayscale(100%);*/
+}
+
+.center-cosas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-card {
+    color: black !important;
+}

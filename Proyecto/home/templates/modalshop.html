@@ -24,7 +24,10 @@
 {% endif %}
 <div class="static">
     <h5 class="offcanvas-title mb-3" id="offcanvasWithBothOptionsLabel">Total: ${{total_carrito}}</h5>
-    <button type="button" class="btn button w-100 mb-2" data-bs-dismiss="offcanvas">Pagar</button>
+    <button type="button" class="btn button w-100 mb-2" data-bs-dismiss="offcanvas">
+        <a href="{%url 'mapa'%}
+        " style="text-decoration: none;color: black;">Pagar</a>
+        </button></button>
 </div>
 <div class="row text-center">
     <div class="col-12">

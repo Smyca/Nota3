@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'IniciarSesion.apps.IniciarsesionConfig',
     'registro.apps.RegistroConfig',
-    'carta',
-    'QuienesSomos',
-    'unete',
+    'carta.apps.CartaConfig',
+    'QuienesSomos.apps.QuienessomosConfig',
+    'unete.apps.UneteConfig',
+    'accounts.apps.AccountsConfig',
+    'mapa.apps.MapaConfig',
 
 ]
 

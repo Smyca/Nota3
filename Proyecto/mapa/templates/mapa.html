@@ -1,0 +1,340 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>mapa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    <!-- Inicio codigo navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="{% url 'inicio' %}">
+                <img src="{% static 'imagenes/logo_yummi.png' %}" alt="Logo" class="logo d-inline-block">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-mars"></i>
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'carta' %}">Menú</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-venus"></i>
+                            &nbsp;Unete a Yummi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'unete' %}">Formulario de registro</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sobre Yummi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'quienesSomosView' %}">Quienes Somos</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                <div class="">
+                    <button class="btn button" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <i class="bi bi-basket2"></i>
+                    </button>
+                </div>
+
+                <div class="vr ms-2 me-2"></div>
+
+                <div>
+                    <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                </div>
+
+                <!-- Contenido modal -->
+                <div class="modal fade " id="staticBackdrop" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                    Opciones de Sesion
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body mx-auto">
+                                <a href="{% url 'login' %}" class="btn button w-100 mb-3">Iniciar Sesion</a>
+                                <a href="{% url 'signup' %}" class="btn button w-100 mb-3">Registrarse</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Fin codigo navbar -->
+
+
+    <!-- Contenido offcanvas -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de Compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            {% include "modalshop.html" %}
+
+        </div>
+    </div>
+    <!-- Fin contenido offcanvas -->
+
+    <!-- Inicio codigo principal -->
+    <div class="bg-principal row ">
+        <div class="col-7">
+            <h1 class="titulo-bg mb-5">Ayudanos a encontrarte!</h1>
+        </div>
+        <div class="col-4" style="background-color: rgb(0, 0, 0, 0.7);width: 50%;height: 400px;">
+            <div class="col-md-12">
+                
+                <h3 class="mt-5" style="color: white;">Verificar domicilio</h3>
+                <input name='nombre' type="text" class="form-control w-70 degrade-inputs" id="inputNombre">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-8">
+                        <button type="submit" class="btn button mx-auto w-100 mt-5">Pagar</button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="col-6 d-flex justify-content-end" >
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.4712988325036!2d-70.72099692430632!3d-33.51513007336397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dca738b6e2cd%3A0x61403e0844e0201f!2sDuoc%20UC%20Sede%20Plaza%20Oeste!5e0!3m2!1ses!2scl!4v1721075830239!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+    </div>
+    
+        
+   
+
+    <!-- Inicio codigo seccion sugeridos -->
+    <div class="shadow-sug">
+        <div class="container arreglo-sugerencias">
+            <h2 class="text-sugerencias">Te Sugerimos Lo Siguiente</h2>
+            <div class="row mt-5 mb-5">
+
+                <div class="card col-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="{% static 'imagenes/subway.svg' %}" class="card-img-top mt-1" alt="...">
+                    <div class="border-top">
+                        <div class="container">
+                            <div class="row">
+                                <button class="btn button w-100">
+                                    <i class="bi bi-basket2-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="{% static 'imagenes/chick-fil-a.svg' %}" class="card-img-top mt-1" alt="...">
+                    <div class="border-top">
+                        <button class="btn button w-100">
+                            <i class="bi bi-basket2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card col-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="{% static 'imagenes/mcdonalds.svg' %}" class="card-img-top mt-1" alt="...">
+                    <div class="border-top">
+                        <button class="btn button w-100 mb-2">
+                            <i class="bi bi-basket2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card col-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="{% static 'imagenes/dodo-pizza.svg' %}" class="card-img-top mt-1" alt="...">
+                    <div class="border-top">
+                        <button class="btn button w-100 mb-2">
+                            <i class="bi bi-basket2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card col-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="{% static 'imagenes/naturalis.svg' %}" class="card-img-top mt-1" alt="...">
+                    <div class="border-top">
+                        <button class="btn button w-100">
+                            <i class="bi bi-basket2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card col-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="{% static 'imagenes/gilroys.svg' %}" class="card-img-top mt-1" alt="...">
+                    <div class="border-top">
+                        <button class="btn button w-100 mb-2">
+                            <i class="bi bi-basket2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin codigo seccion sugeridos -->
+
+    <!-- Inicio codigo preferencia -->
+    <div class="bg-seccion-preferencia">
+        <div class="container mt-5 bg-seccion-preferencia">
+            <div class="row">
+                <h2 class="text-card tittle-cards">Beneficios de Yummi</h2>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="card mt-4" id="cardstyle">
+                        <div class="card-body">
+                            <h5 class="text-card border-bottom">RAPIDEZ</h5>
+                            <p class="card-text text-card">¡En nuestro restaurante, la rapidez es nuestra máxima
+                                prioridad y la clave de nuestro éxito! Desde el momento en que decides entrar por
+                                nuestra
+                                pagina web o haces un pedido, te garantizamos una experiencia culinaria que se mueve al
+                                ritmo de tu vida
+                                ocupada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="card mt-4" id="cardstyle">
+                        <div class="card-body">
+                            <h5 class="text-card border-bottom">EFICIENCIA</h5>
+                            <p class="card-text text-card">En nuestro restaurante, la eficiencia es el 100% motor que
+                                impulsa
+                                cada aspecto de nuestra operación. Desde el momento en que nos eliges hasta el último
+                                bocado, te garantizamos una experiencia culinaria que combina la excelencia con la
+                                velocidad pero sin perder calidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="card mt-4" id="cardstyle">
+                        <div class="card-body">
+                            <h5 class="text-card border-bottom">CALIDAD</h5>
+                            <p class="card-text text-card">En nuestro restaurante, la calidad es nuestro sello
+                                distintivo, y estamos comprometidos a ofrecerte una experiencia culinaria excepcional en
+                                cada visita. También en garantizar
+                                que cada plato que sale de nuestra cocina cumpla con los más altos estándares de
+                                excelencia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="card mt-4" id="cardstyle">
+                        <div class="card-body">
+                            <h5 class="text-card border-bottom">CARIÑO</h5>
+                            <p class="card-text text-card">En nuestro restaurante, cada plato que servimos está
+                                impregnado con un toque especial de cariño y dedicación. Nos esforzamos por crear un
+                                ambiente acogedor y familiar donde cada cliente se sienta bienvenido y valorado, y tu
+                                puedas disfrutar cada ingrediente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin codigo preferencia -->
+
+    <!-- Inicio info -->
+    <div class="clearfix bg-seccion-info">
+        <h2 class="text-informacion">¿Porque Elegirnos?</h2>
+        <img src="{% static 'imagenes/camarero-feliz.jpeg' %}"
+            class="col-12 col-sm-12 col-md-6 col-lg-4 float-md-end mb-3 ms-md-3 me-4 rounded" alt="...">
+        <div class="ms-4 mb-5 fw-bold">
+            <p>
+                Yummi es nuestra página web, donde la excelencia culinaria y la atención al cliente se combinan
+                para ofrecerte lo mejor en gastronomía! A diferencia de la competencia, nuestra web te ofrece una
+                experiencia intuitiva y envolvente, con un menú detallado y apetitoso, fácil navegación, y funciones
+                avanzadas como pedidos en línea y reservas instantáneas.
+            </p>
+            <p>
+                Nos diferenciamos por nuestro compromiso con la calidad y el servicio. Aquí, descubrirás nuestra
+                historia, valores y el equipo apasionado que crea cada plato con dedicación. Además, en nuestra sección
+                de innovación, siempre encontrarás las últimas creaciones culinarias y eventos especiales.
+            </p>
+            <p>
+                En resumen, nuestra página web es más que informativa, es una extensión de la experiencia única que
+                ofrecemos en nuestro restaurante. Explórala y descubre por qué somos la mejor opción para tu próxima
+                comida. ¡Te esperamos tanto en línea como en nuestro restaurante!
+            </p>
+        </div>
+    </div>
+    <!-- Fin info -->
+
+    <!-- Fin codigo principal -->
+
+    <!-- Iniio codigo footer -->
+    <footer class="border-top" id="footerstyle">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2 center-cosas">
+                    <img src="{% static 'imagenes/logo_yummi.png' %}" class="logofooter" alt="">
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 col-lg-3 center-cosas">
+                    <a href="" class="link-light me-3 fs-4"><i class="bi bi-twitter-x"></i></a>
+                    <a href="" class="link-light me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                    <a href="" class="link-light me-3 fs-4"><i class="bi bi-facebook"></i></a>
+                    <a href="" class="link-light fs-4"><i class="bi bi-whatsapp"></i></a>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 col-lg-3 mt-5 text-center">
+                    <p><a href="" class="link-underline-opacity-0 link-light">Obten Ayuda</a></p>
+                    <p><a href="" class="link-underline-opacity-0 link-light">Agrega tu Restaurante</a></p>
+                    <p><a href="" class="link-underline-opacity-0 link-light">Registrate para delivery</a></p>
+                    <p><a href="" class="link-underline-opacity-0 link-light">Promociones</a>
+                    </p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 col-lg-3 mt-5 text-center">
+                    <p><a href="" class="link-underline-opacity-0 link-light">Politicas de Privacidad</a></p>
+                    <p><a href="" class="link-underline-opacity-0 link-light">Terminos y Condiciones</a></p>
+                    <p><a href="" class="link-underline-opacity-0 link-light">Acerca de RinconSaludable</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Fin codigo footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

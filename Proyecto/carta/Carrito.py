@@ -39,7 +39,7 @@ class Carrito :
             self.guardar_carrito()
         
     def restar (self, productos):
-        for key, value in self.carrito.items():
+        for key, value in list(self.carrito.items()):
             if key == str(productos.id):
                     value["cantidad"] = value["cantidad"] - 1
                     if value["cantidad"] < 1:

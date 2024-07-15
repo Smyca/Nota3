@@ -10,7 +10,6 @@ urlpatterns = [
     path('home/',homeView, name='homeView'),
     path('login/',loginView,name='login'),
     path('register/',registroView,name='registro'),
-    path('menu/',carta,name='carta'),
     path('quienesSomos/',quienesSomosView,name='quienesSomosView'),
 
 ]
